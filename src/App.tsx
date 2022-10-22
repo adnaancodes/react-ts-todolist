@@ -22,16 +22,14 @@ function App() {
     ]);
     setTask("");
   };
-  // const toggleTodo = (id: string) => {
-  //   setTodos(
-  //     todos.map((todo) => {
-  //       if (todo.id === id) todo.completed = !todo.completed;
-
-  //       return todo;
-  //     })
-  //   );
-  // };
-
+  const toggleTodo = (id: string) => {
+    setTodos(
+      todos.map((todo) => {
+        if (todo.id === id) todo.completed = !todo.completed;
+        return todo;
+      })
+    );
+  };
   return (
     <>
       <h1>TODO LIST</h1>
@@ -44,11 +42,11 @@ function App() {
             key={todo.id}
             className={`todo ${todo.completed && "completed"}`}
           >
-            {/* <input
+            <input
               onChange={() => toggleTodo(todo.id)}
               type="checkbox"
               checked={todo.completed}
-            /> */}
+            />
             <span>{todo.text}</span>
           </div>
         ))}
